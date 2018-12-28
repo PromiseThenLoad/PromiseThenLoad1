@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#cv{
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<input type="c">
+	<canvas id="cv" width="500"	height="500"></canvas>
+</body>
+</html>
+<script>
+	function fn(){
+		this.x = 0;
+		this.y = 0;
+	}
+	//获取画笔;
+	var ctx = cv.getContext("2d");
+	//创建图片对象;
+
+	var img = new Image();
+	img.src = "img/9..png";
+	img.onload = function(){
+		var pic = new fn();
+		ctx.drawImage(this,pic.x,pic.y,200,200);
+		cv.onmousedown = function(e){
+
+			//获取鼠标坐标;
+			var x = e.clientX;
+			var y = e.clientY;
+			pic.x = x;
+			pic.y = y;
+			
+			ctx.stroke();
+			console.log(pic.x);
+		}
+	}
+	
+</script>
